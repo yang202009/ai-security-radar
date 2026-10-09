@@ -1,0 +1,2590 @@
+{
+  "schema_version": 2,
+  "reviewed_at": "2026-10-09",
+  "assessment": {
+    "score_formula": "quality = authority*5 + originality*6 + transparency*6 + access*3; dimensions 0..5; radar_fit separate 0..5",
+    "scope": "Entry identity/access review and selected primary-page claims, not a longitudinal publication audit."
+  },
+  "presets": {
+    "quick": [
+      "thn",
+      "embrace",
+      "gtig",
+      "anthropic",
+      "openai"
+    ],
+    "balanced": [
+      "thn",
+      "embrace",
+      "gtig",
+      "anthropic",
+      "openai",
+      "wiz",
+      "microsoft",
+      "trailofbits"
+    ],
+    "deep": [
+      "thn",
+      "embrace",
+      "gtig",
+      "anthropic",
+      "openai",
+      "wiz",
+      "microsoft",
+      "trailofbits",
+      "unit42",
+      "lakera",
+      "hiddenlayer",
+      "bleepingcomputer"
+    ]
+  },
+  "lanes": {
+    "secure-ai": [
+      "embrace",
+      "trailofbits",
+      "wiz",
+      "unit42",
+      "lakera",
+      "hiddenlayer",
+      "anthropic",
+      "owasp"
+    ],
+    "ai-assisted-attack": [
+      "gtig",
+      "microsoft",
+      "anthropic",
+      "openai",
+      "unit42",
+      "crowdstrike",
+      "checkpoint"
+    ],
+    "ai-defense": [
+      "openai",
+      "anthropic",
+      "projectzero",
+      "trailofbits",
+      "aisi",
+      "caissi",
+      "microsoft"
+    ],
+    "china": [
+      "cncert",
+      "tc260",
+      "cac",
+      "miit",
+      "cverc",
+      "secrss",
+      "freebuf",
+      "anquanke"
+    ],
+    "frameworks": [
+      "owasp",
+      "mitre",
+      "nist",
+      "ncsc",
+      "cisa",
+      "csa",
+      "enisa"
+    ],
+    "papers": [
+      "arxiv",
+      "satml",
+      "usenix",
+      "ieeesp",
+      "acmccs",
+      "ndss",
+      "aisec"
+    ],
+    "industry": [
+      "gartner",
+      "forrester",
+      "idc",
+      "ccia",
+      "rsa",
+      "g2"
+    ],
+    "news": [
+      "thn",
+      "securityweek",
+      "bleepingcomputer",
+      "darkreading",
+      "record",
+      "secrss",
+      "tldrsec",
+      "simon"
+    ]
+  },
+  "context_ids": [
+    "owasp",
+    "mitre",
+    "nist",
+    "ncsc",
+    "invariant"
+  ],
+  "sources": [
+    {
+      "id": "360",
+      "name": "360数字安全",
+      "domain": "360.com",
+      "url": "https://www.360.com",
+      "role": "industry",
+      "focus": "厂商产品与报告发现",
+      "caveat": "综合营销主页不等于威胁研究流；需具名团队和具体报告。",
+      "language": "zh",
+      "source_family": "360",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 3,
+        "access": 5,
+        "quality": 71,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "cisa",
+      "name": "CISA 美国网络安全和基础设施安全局",
+      "domain": "cisa.gov",
+      "url": "https://www.cisa.gov",
+      "role": "official",
+      "focus": "部署指南与被利用漏洞核验",
+      "caveat": "KEV只证明目录中的漏洞有利用证据；指南本身不能证明某个AI产品被攻破。",
+      "language": "en",
+      "source_family": "us-government",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 2,
+        "quality": 85,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "search-only"
+      }
+    },
+    {
+      "id": "nist",
+      "name": "NIST 美国国家标准与技术研究院",
+      "domain": "nist.gov",
+      "url": "https://www.nist.gov",
+      "role": "context",
+      "focus": "AI RMF、生成式AI与关键基础设施风险基线",
+      "caveat": "区分概念稿、征求意见稿与正式版本；框架不构成具体客户合规结论。",
+      "language": "en",
+      "source_family": "nist",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "enisa",
+      "name": "ENISA 欧盟网络安全局",
+      "domain": "enisa.europa.eu",
+      "url": "https://www.enisa.europa.eu",
+      "role": "official",
+      "focus": "欧盟威胁景观与AI部署研究",
+      "caveat": "政策执行、研究报告与具体法规义务分开；只追踪与企业AI控制直接相关的材料。",
+      "language": "en",
+      "source_family": "enisa",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "eu-ai-office",
+      "name": "欧盟委员会 AI Office（EU AI Act）",
+      "domain": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "role": "official",
+      "focus": "欧盟AI规则与正式文件",
+      "caveat": "回到法律原文和适用范围；政策入口不代表所有企业都负有同一义务。",
+      "language": "en",
+      "source_family": "eu-ai-office",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "aisi",
+      "name": "UK AI Security Institute（AISI）",
+      "domain": "aisi.gov.uk",
+      "url": "https://www.aisi.gov.uk",
+      "role": "research",
+      "focus": "前沿模型网络能力与Agent评测",
+      "caveat": "评测环境与现实入侵分开；不沿用附件中的首个或最大等宣传比较。",
+      "language": "en",
+      "source_family": "uk-aisi",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "alternate_urls": [
+        "https://www.aisi.gov.uk/blog/international-evaluation-best-practice-and-open-questions-in-ai-measurement"
+      ]
+    },
+    {
+      "id": "caissi",
+      "name": "NIST CAISSI（历史名称 US AISI / CAISI）",
+      "domain": "nist.gov",
+      "url": "https://www.nist.gov/caissi",
+      "role": "research",
+      "focus": "美国NIST模型与Agent安全评测",
+      "caveat": "旧US AISI入口当前跳转CAISSI；历史报告仍可能使用CAISI名称，保留发布时身份。",
+      "language": "en",
+      "source_family": "nist",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "sgaisi",
+      "name": "Singapore AISI（IMDA）",
+      "domain": "sgaisi.sg",
+      "url": "https://www.sgaisi.sg",
+      "role": "research",
+      "focus": "系统级评测与亚太治理测试",
+      "caveat": "AI Verify治理测试不能替代提示注入、工具权限和网络攻防验证。",
+      "language": "en",
+      "source_family": "sgaisi",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "ncsc",
+      "name": "NCSC 英国国家网络安全中心",
+      "domain": "ncsc.gov.uk",
+      "url": "https://www.ncsc.gov.uk",
+      "role": "official",
+      "focus": "AI安全开发、采购与部署指南",
+      "caveat": "核对联合发布机构、适用系统与文档版本。",
+      "language": "en",
+      "source_family": "uk-government",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "anssi",
+      "name": "ANSSI 法国国家信息系统安全局",
+      "domain": "cyber.gouv.fr",
+      "url": "https://cyber.gouv.fr/",
+      "role": "official",
+      "focus": "法国AI系统安全与部署建议",
+      "caveat": "旧域名重定向cyber.gouv.fr；法语与英文版本可能有发布时差。",
+      "language": "en",
+      "source_family": "anssi",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "iso-sc42",
+      "name": "ISO/IEC JTC 1 SC 42",
+      "domain": "iso.org",
+      "url": "https://www.iso.org/committee/6794477.html",
+      "role": "context",
+      "focus": "AI管理体系与影响评估标准",
+      "caveat": "42005:2025是AI系统影响评估；付费正文未读时只引用公开摘要。",
+      "language": "en",
+      "source_family": "iso-sc42",
+      "tier": "background",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 2,
+        "quality": 85,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "search-only"
+      }
+    },
+    {
+      "id": "cac",
+      "name": "国家互联网信息办公室 CAC",
+      "domain": "cac.gov.cn",
+      "url": "https://www.cac.gov.cn/",
+      "role": "official",
+      "focus": "中国生成式AI、数据与内容安全规则",
+      "caveat": "区分征求意见、正式发布和生效日；具体义务核对法条与适用对象。",
+      "language": "zh",
+      "source_family": "cac",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 3,
+        "access": 5,
+        "quality": 88,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "cncert",
+      "name": "CNCERT/CC 国家互联网应急中心",
+      "domain": "cert.org.cn",
+      "url": "https://www.cert.org.cn",
+      "role": "official",
+      "focus": "国内AI应用风险提示与应急通报",
+      "caveat": "通报可以确认发布事实；攻击机制和产品修复仍需原报告及厂商公告。",
+      "language": "zh",
+      "source_family": "cncert",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "cnvd",
+      "name": "CNVD 国家信息安全漏洞共享平台",
+      "domain": "cnvd.org.cn",
+      "url": "https://www.cnvd.org.cn",
+      "role": "vulnerability",
+      "focus": "中文漏洞收录与产品核验",
+      "caveat": "通用漏洞库只按AI相关产品或CVE查；同步延迟、评级差异不能直接判定谁更准确。",
+      "language": "zh",
+      "source_family": "cncert",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 1,
+        "quality": 82,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "cnnvd",
+      "name": "CNNVD 国家信息安全漏洞库",
+      "domain": "cnnvd.org.cn",
+      "url": "https://www.cnnvd.org.cn/",
+      "role": "vulnerability",
+      "focus": "中文漏洞等级与受影响产品",
+      "caveat": "附件域名多一个n，改为cnnvd.org.cn；正文动态加载时追公告及厂商原文。",
+      "language": "zh",
+      "source_family": "itsec",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 3,
+        "quality": 88,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "limited"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "cverc",
+      "name": "CVERC 国家计算机病毒应急处理中心",
+      "domain": "cverc.org.cn",
+      "url": "https://www.cverc.org.cn",
+      "role": "official",
+      "focus": "国内安全态势与测评报告",
+      "caveat": "本次未核实附件所称2026综合测评报告；查到原文前不复述其结果。",
+      "language": "zh",
+      "source_family": "cverc",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 3,
+        "access": 5,
+        "quality": 88,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "tc260",
+      "name": "TC260 全国网络安全标准化技术委员会",
+      "domain": "tc260.org.cn",
+      "url": "https://www.tc260.org.cn/index.jsp",
+      "role": "official",
+      "focus": "AI应用与生成式AI安全标准文件",
+      "caveat": "技术文件、实践指南、征求意见稿和国家标准分别标注，不能混作强制要求。",
+      "language": "zh",
+      "source_family": "tc260",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 94,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "miit",
+      "name": "工业和信息化部 MIIT",
+      "domain": "miit.gov.cn",
+      "url": "https://www.miit.gov.cn",
+      "role": "official",
+      "focus": "工业AI与行业安全通报",
+      "caveat": "只调用与具体行业或AI攻击面相关的通报；不泛化为所有企业义务。",
+      "language": "zh",
+      "source_family": "miit",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 3,
+        "access": 5,
+        "quality": 88,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "mps",
+      "name": "公安部网络安全保卫局",
+      "domain": "mps.gov.cn",
+      "url": "https://www.mps.gov.cn",
+      "role": "official",
+      "focus": "执法案例与安全管理公开口径",
+      "caveat": "机构主页不足以支持特定HW监管口径；需具体正式文件。",
+      "language": "zh",
+      "source_family": "mps",
+      "tier": "background",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 3,
+        "access": 1,
+        "quality": 76,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "ccia",
+      "name": "CCIA 中国网络安全产业联盟",
+      "domain": "china-cia.org.cn",
+      "url": "https://www.china-cia.org.cn",
+      "role": "industry",
+      "focus": "国内安全产业调查与市场背景",
+      "caveat": "产业联盟不是监管部门；调查样本、年份与厂商利益关系需核对。",
+      "language": "zh",
+      "source_family": "ccia",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 3,
+        "access": 1,
+        "quality": 65,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "cncert-nav",
+      "name": "CNCERT 安全导航",
+      "domain": "cncert.github.io",
+      "url": "https://cncert.github.io",
+      "role": "directory",
+      "focus": "候选安全站点发现",
+      "caveat": "域名与官方维护关系未核实；导航推荐不构成技术证据。",
+      "language": "zh",
+      "source_family": "unverified",
+      "tier": "hold",
+      "rating": {
+        "authority": 2,
+        "originality": 1,
+        "transparency": 1,
+        "access": 1,
+        "quality": 25,
+        "radar_fit": 1
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "gtig",
+      "name": "Google Threat Intelligence / Mandiant",
+      "domain": "cloud.google.com",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence",
+      "role": "threat-intelligence",
+      "focus": "攻击者使用AI与真实观测",
+      "caveat": "区分可见样本、归因推测与独立确认；不能从厂商观察推算全网占比。",
+      "language": "en",
+      "source_family": "google",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "query_scope": "inurl:blog/topics/threat-intelligence"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft Security Blog",
+      "domain": "microsoft.com",
+      "url": "https://www.microsoft.com/en-us/security/blog/",
+      "role": "threat-intelligence",
+      "focus": "Copilot、身份与企业AI攻防",
+      "caveat": "明确不同Copilot产品、许可和权限；修复追溯MSRC。",
+      "language": "en",
+      "source_family": "microsoft",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "query_scope": "inurl:security/blog"
+    },
+    {
+      "id": "unit42",
+      "name": "Palo Alto Networks Unit 42",
+      "domain": "unit42.paloaltonetworks.com",
+      "url": "https://unit42.paloaltonetworks.com",
+      "role": "threat-intelligence",
+      "focus": "Agent攻击、云与AI供应链",
+      "caveat": "研究披露和产品推广分开；收购关系不自动增加证据独立性。",
+      "language": "en",
+      "source_family": "palo-alto-networks",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "talos",
+      "name": "Cisco Talos Intelligence",
+      "domain": "blog.talosintelligence.com",
+      "url": "https://blog.talosintelligence.com",
+      "role": "threat-intelligence",
+      "focus": "恶意软件、漏洞与AI辅助攻击",
+      "caveat": "Cisco公司收购不能证明Talos每篇报告属于AI专项；检查实际研究团队。",
+      "language": "en",
+      "source_family": "talos",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "crowdstrike",
+      "name": "CrowdStrike Blog",
+      "domain": "crowdstrike.com",
+      "url": "https://www.crowdstrike.com/en-us/blog/",
+      "role": "threat-intelligence",
+      "focus": "真实入侵、eCrime与AI滥用观察",
+      "caveat": "客户遥测范围与全行业分开；年度统计比较需统一口径。",
+      "language": "en",
+      "source_family": "crowdstrike",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI — Safety & Preparedness",
+      "domain": "openai.com",
+      "url": "https://openai.com/safety/",
+      "role": "research",
+      "focus": "系统卡、网络能力与滥用披露",
+      "caveat": "自有模型和平台观察属于利益相关的一手披露；不能充当独立确认。",
+      "language": "en",
+      "source_family": "openai",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "alternate_urls": [
+        "https://openai.com/news/"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic — Safety & Responsible Scaling",
+      "domain": "anthropic.com",
+      "url": "https://www.anthropic.com/responsible-scaling-policy",
+      "role": "research",
+      "focus": "Agent、模型网络能力与滥用研究",
+      "caveat": "RSP政策入口与技术披露不同；MCP的设计归属不能覆盖全部生态漏洞。",
+      "language": "en",
+      "source_family": "anthropic",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "alternate_urls": [
+        "https://www.anthropic.com/research",
+        "https://www.anthropic.com/news"
+      ]
+    },
+    {
+      "id": "sentinellabs",
+      "name": "SentinelLabs",
+      "domain": "sentinelone.com",
+      "url": "https://www.sentinelone.com/labs/",
+      "role": "threat-intelligence",
+      "focus": "恶意软件与攻击链分析",
+      "caveat": "IOC和规则只适用于报告范围；营销性的AI驱动表述需技术证据。",
+      "language": "en",
+      "source_family": "sentinellabs",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "aws",
+      "name": "AWS Security Blog",
+      "domain": "aws.amazon.com",
+      "url": "https://aws.amazon.com/blogs/security/",
+      "role": "research",
+      "focus": "Bedrock、云IAM与AI部署安全",
+      "caveat": "AWS最佳实践与独立漏洞发现分开；具体供应链事件逐篇核验。",
+      "language": "en",
+      "source_family": "aws",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "wiz",
+      "name": "Wiz Research",
+      "domain": "wiz.io",
+      "url": "https://www.wiz.io/research",
+      "role": "research",
+      "focus": "AI云服务、跨租户与数据暴露",
+      "caveat": "优先研究专题；产品部署建议不证明所有客户有同样风险。",
+      "language": "en",
+      "source_family": "wiz",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "name": "Check Point Research",
+      "domain": "research.checkpoint.com",
+      "url": "https://research.checkpoint.com",
+      "role": "threat-intelligence",
+      "focus": "AI钓鱼、恶意文档与攻击趋势",
+      "caveat": "攻击增幅需分母、采样时间及遥测范围。",
+      "language": "en",
+      "source_family": "checkpoint",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "citizenlab",
+      "name": "Citizen Lab（多伦多大学）",
+      "domain": "citizenlab.ca",
+      "url": "https://citizenlab.ca",
+      "role": "research",
+      "focus": "定向监控与间谍软件原创调查",
+      "caveat": "原创质量高，但AI相关度低；仅在实际AI攻击联系明确时调用。",
+      "language": "en",
+      "source_family": "citizenlab",
+      "tier": "background",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "projectzero",
+      "name": "Google Project Zero",
+      "domain": "projectzero.google",
+      "url": "https://projectzero.google/",
+      "role": "research",
+      "focus": "漏洞方法与AI辅助发现",
+      "caveat": "旧Blogspot入口已迁移；研究演示、漏洞披露与真实利用分开。",
+      "language": "en",
+      "source_family": "google",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "groupib",
+      "name": "Group-IB",
+      "domain": "group-ib.com",
+      "url": "https://www.group-ib.com/blog/",
+      "role": "threat-intelligence",
+      "focus": "勒索、暗网与亚太攻击情报",
+      "caveat": "暗网和归因主张需原始样本与方法；只选AI直接相关内容。",
+      "language": "en",
+      "source_family": "groupib",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind — Safety",
+      "domain": "deepmind.google",
+      "url": "https://deepmind.google/responsibility-and-safety/",
+      "role": "research",
+      "focus": "模型安全与网络能力评测",
+      "caveat": "替换失效safety入口；对齐或生物风险默认不进入网络安全简报。",
+      "language": "en",
+      "source_family": "google",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "mitre",
+      "name": "MITRE ATLAS",
+      "domain": "atlas.mitre.org",
+      "url": "https://atlas.mitre.org/",
+      "role": "context",
+      "focus": "ATLAS技术、案例与证据成熟度",
+      "caveat": "框架收录不自动证明现实利用；核对案例与原始披露。",
+      "language": "en",
+      "source_family": "mitre",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 4,
+        "access": 3,
+        "quality": 88,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "limited"
+      }
+    },
+    {
+      "id": "owasp",
+      "name": "OWASP GenAI Security Project",
+      "domain": "genai.owasp.org",
+      "url": "https://genai.owasp.org/",
+      "role": "context",
+      "focus": "LLM、Agent风险和控制标准",
+      "caveat": "2026发布页与旧索引不一致时查具体资源；向量弱点在2025版已存在。",
+      "language": "en",
+      "source_family": "owasp",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "alternate_urls": [
+        "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+      ]
+    },
+    {
+      "id": "cais",
+      "name": "Center for AI Safety（CAIS）",
+      "domain": "safe.ai",
+      "url": "https://safe.ai",
+      "role": "research",
+      "focus": "灾难风险与能力评测研究",
+      "caveat": "倡导立场与实测分开；只调用网络攻击能力或企业控制相关研究。",
+      "language": "en",
+      "source_family": "cais",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "aivillage",
+      "name": "AI Village",
+      "domain": "aivillage.org",
+      "url": "https://aivillage.org",
+      "role": "community",
+      "focus": "AI红队竞赛与公开评测材料",
+      "caveat": "竞赛、越狱与现实产品入侵不同；Gandalf等训练不能证明企业安全。",
+      "language": "en",
+      "source_family": "aivillage",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "lakera",
+      "name": "Lakera Research",
+      "domain": "lakera.ai",
+      "url": "https://www.lakera.ai/research",
+      "role": "research",
+      "focus": "提示注入、记忆与Skills供应链研究",
+      "caveat": "众包攻击集和受控实验分别说明；索引最新可见文章不足以支持周更。",
+      "language": "en",
+      "source_family": "lakera",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "hiddenlayer",
+      "name": "HiddenLayer Innovation Hub",
+      "domain": "hiddenlayer.com",
+      "url": "https://www.hiddenlayer.com/innovation-hub",
+      "role": "research",
+      "focus": "AI模型、Agent研究与SAI通告",
+      "caveat": "Research、SAI与产品解读分开；Hugging Face事件转述需追事故相关方。",
+      "language": "en",
+      "source_family": "hiddenlayer",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "aiid",
+      "name": "AI Incident Database（AIID）",
+      "domain": "incidentdatabase.ai",
+      "url": "https://incidentdatabase.ai",
+      "role": "context",
+      "focus": "AI事故案例索引",
+      "caveat": "众包与媒体转载不等于已证实网络攻击；不能直接用条目数计算攻击发生率。",
+      "language": "en",
+      "source_family": "aiid",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 3,
+        "access": 5,
+        "quality": 71,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "trailofbits",
+      "name": "Trail of Bits",
+      "domain": "trailofbits.com",
+      "url": "https://trailofbits.com/reports/",
+      "role": "research",
+      "focus": "公开审计、AI/ML架构与漏洞研究",
+      "caveat": "审计范围、项目版本和日期限制结论；博客与审计库均可用。",
+      "language": "en",
+      "source_family": "trailofbits",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 95,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "alternate_urls": [
+        "https://blog.trailofbits.com/"
+      ]
+    },
+    {
+      "id": "apollo",
+      "name": "Apollo Research",
+      "domain": "apolloresearch.ai",
+      "url": "https://www.apolloresearch.ai",
+      "role": "research",
+      "focus": "Agent欺骗、评测规避与行为边界",
+      "caveat": "受控诱导与现实企业事故分开；纯对齐专题不占默认新闻条目。",
+      "language": "en",
+      "source_family": "apollo",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "mlcommons",
+      "name": "MLCommons",
+      "domain": "mlcommons.org",
+      "url": "https://mlcommons.org",
+      "role": "context",
+      "focus": "公开安全基准与评测方法",
+      "caveat": "内容危害基准不等于应用网络安全；核对版本、语言与测量对象。",
+      "language": "en",
+      "source_family": "mlcommons",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "csa",
+      "name": "Cloud Security Alliance（CSA）",
+      "domain": "cloudsecurityalliance.org",
+      "url": "https://cloudsecurityalliance.org",
+      "role": "context",
+      "focus": "云与AI控制、治理和部署方法",
+      "caveat": "LLM Top 10与ACS须回OWASP原发布方；成员厂商文章分开标识。",
+      "language": "en",
+      "source_family": "csa",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "stanfordhai",
+      "name": "Stanford HAI",
+      "domain": "hai.stanford.edu",
+      "url": "https://hai.stanford.edu",
+      "role": "research",
+      "focus": "AI指数与跨年度背景数据",
+      "caveat": "年度统计存在时间滞后；不能替代近期事件或具体产品测评。",
+      "language": "en",
+      "source_family": "stanfordhai",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "nccgroup",
+      "name": "NCC Group",
+      "domain": "nccgroup.com",
+      "url": "https://www.nccgroup.com/research/",
+      "role": "research",
+      "focus": "AI审计、红队与漏洞披露",
+      "caveat": "公司主页改为研究入口；测试方法仍受项目权限和范围限制。",
+      "language": "en",
+      "source_family": "nccgroup",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "gridthegrey",
+      "name": "GRID THE GREY",
+      "domain": "gridthegrey.com",
+      "url": "https://gridthegrey.com",
+      "role": "analysis",
+      "focus": "AI安全聚合与框架映射线索",
+      "caveat": "主页可读，但作者、映射过程和原文追溯本次未核全；自评分不作风险证据。",
+      "language": "en",
+      "source_family": "gridthegrey",
+      "tier": "hold",
+      "rating": {
+        "authority": 2,
+        "originality": 2,
+        "transparency": 2,
+        "access": 5,
+        "quality": 49,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "thn",
+      "name": "The Hacker News",
+      "domain": "thehackernews.com",
+      "url": "https://thehackernews.com/search/label/Prompt%20Injection?m=0",
+      "role": "news",
+      "focus": "AI漏洞与修复发现",
+      "caveat": "区分编辑报道、Expert Insights及赞助；追原始研究。",
+      "language": "en",
+      "source_family": "thn",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 77,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "bleepingcomputer",
+      "name": "BleepingComputer",
+      "domain": "bleepingcomputer.com",
+      "url": "https://www.bleepingcomputer.com/",
+      "role": "news",
+      "focus": "攻击事件、漏洞与修复跟进",
+      "caveat": "通用安全媒体；只选AI相关报道，转述不加独立证据。",
+      "language": "en",
+      "source_family": "bleepingcomputer",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "krebs",
+      "name": "Krebs on Security",
+      "domain": "krebsonsecurity.com",
+      "url": "https://krebsonsecurity.com",
+      "role": "news",
+      "focus": "网络犯罪原创调查",
+      "caveat": "AI覆盖低；原创采访可以是一手事实，但不是漏洞复现。",
+      "language": "en",
+      "source_family": "krebs",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 95,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "securityweek",
+      "name": "SecurityWeek",
+      "domain": "securityweek.com",
+      "url": "https://www.securityweek.com/category/artificial-intelligence/",
+      "role": "news",
+      "focus": "AI企业安全新闻与政策线索",
+      "caveat": "过滤融资与纯产品宣传；报道不能替代技术原文。",
+      "language": "en",
+      "source_family": "securityweek",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 77,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "darkreading",
+      "name": "Dark Reading",
+      "domain": "darkreading.com",
+      "url": "https://www.darkreading.com",
+      "role": "news",
+      "focus": "企业攻防与技术解读",
+      "caveat": "来稿、专栏与独立新闻分开；供应商观点追实测。",
+      "language": "en",
+      "source_family": "darkreading",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 77,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "record",
+      "name": "The Record by Recorded Future",
+      "domain": "therecord.media",
+      "url": "https://therecord.media",
+      "role": "news",
+      "focus": "地缘、国家级攻击与事件采访",
+      "caveat": "Recorded Future所有权不使新闻自动变成独立威胁遥测。",
+      "language": "en",
+      "source_family": "record",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "cyberscoop",
+      "name": "CyberScoop",
+      "domain": "cyberscoop.com",
+      "url": "https://cyberscoop.com",
+      "role": "news",
+      "focus": "政府安全与执法新闻",
+      "caveat": "政策新闻需官方文件，默认仅纳入AI直接关联事件。",
+      "language": "en",
+      "source_family": "cyberscoop",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "helpnet",
+      "name": "Help Net Security",
+      "domain": "helpnetsecurity.com",
+      "url": "https://www.helpnetsecurity.com",
+      "role": "news",
+      "focus": "漏洞快讯与调研线索",
+      "caveat": "发布稿、采访和原创报道分开；调研样本追原报告。",
+      "language": "en",
+      "source_family": "helpnet",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 3,
+        "access": 5,
+        "quality": 71,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "cso",
+      "name": "CSO Online",
+      "domain": "csoonline.com",
+      "url": "https://www.csoonline.com",
+      "role": "analysis",
+      "focus": "安全预算、治理与项目沟通",
+      "caveat": "管理观点不能证明产品能力，注意赞助与正文访问限制。",
+      "language": "en",
+      "source_family": "cso",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 3,
+        "access": 5,
+        "quality": 71,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "freebuf",
+      "name": "FreeBuf",
+      "domain": "freebuf.com",
+      "url": "https://www.freebuf.com",
+      "role": "news",
+      "focus": "中文AI安全与技术线索",
+      "caveat": "作者及转载来源逐篇核对；本次主站访问受限，不当作已读正文。",
+      "language": "zh",
+      "source_family": "freebuf",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 3,
+        "transparency": 3,
+        "access": 1,
+        "quality": 54,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "secrss",
+      "name": "安全内参",
+      "domain": "secrss.com",
+      "url": "https://www.secrss.com",
+      "role": "news",
+      "focus": "中文政策、企业AI与产业线索",
+      "caveat": "转载和原创分开；回官方或研究原文，不把转述当第二份证据。",
+      "language": "zh",
+      "source_family": "secrss",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 3,
+        "transparency": 4,
+        "access": 2,
+        "quality": 63,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "search-only"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "anquanke",
+      "name": "安全客 AnQuanKe",
+      "domain": "anquanke.com",
+      "url": "https://www.anquanke.com/index.html",
+      "role": "community",
+      "focus": "中文漏洞与安全技术",
+      "caveat": "社区作者身份和复现质量逐篇判断；站点身份不担保所有投稿。",
+      "language": "zh",
+      "source_family": "anquanke",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 4,
+        "transparency": 3,
+        "access": 5,
+        "quality": 72,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "4hou",
+      "name": "嘶吼 4hou",
+      "domain": "4hou.com",
+      "url": "https://www.4hou.com",
+      "role": "news",
+      "focus": "中文安全资讯与行业报道",
+      "caveat": "会议与厂商稿过滤；AI结论追原始报告。",
+      "language": "zh",
+      "source_family": "4hou",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 3,
+        "transparency": 3,
+        "access": 5,
+        "quality": 66,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "butian",
+      "name": "奇安信攻防社区 / 安全博客",
+      "domain": "forum.butian.net",
+      "url": "https://forum.butian.net",
+      "role": "community",
+      "focus": "漏洞披露与攻防社区材料",
+      "caveat": "社区URL不能代表奇安信全部报告；作者与补丁证据逐篇确认。",
+      "language": "zh",
+      "source_family": "butian",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 4,
+        "transparency": 3,
+        "access": 1,
+        "quality": 60,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "tencent-tsrc",
+      "name": "腾讯安全应急响应中心（TSRC）",
+      "domain": "security.tencent.com",
+      "url": "https://security.tencent.com",
+      "role": "vulnerability",
+      "focus": "腾讯产品安全公告与响应",
+      "caveat": "此URL为TSRC，不等于玄武和湛泸全部研究；实验室报告跟其原网址。",
+      "language": "zh",
+      "source_family": "tencent-tsrc",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "aliyun-security",
+      "name": "阿里云安全",
+      "domain": "developer.aliyun.com",
+      "url": "https://developer.aliyun.com/topic/security",
+      "role": "community",
+      "focus": "云AI架构与技术文章",
+      "caveat": "专题入口本次不可读；先知等用户投稿与阿里云官方公告分开。",
+      "language": "zh",
+      "source_family": "aliyun-security",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 3,
+        "access": 1,
+        "quality": 65,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "threatbook",
+      "name": "微步在线 ThreatBook",
+      "domain": "x.threatbook.com",
+      "url": "https://x.threatbook.com",
+      "role": "threat-intelligence",
+      "focus": "IOC与攻击基础设施核验",
+      "caveat": "查询工具本次只返回空壳；信誉结果不能单独证明恶意或AI归因。",
+      "language": "zh",
+      "source_family": "threatbook",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 3,
+        "access": 3,
+        "quality": 71,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "limited"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "anzer",
+      "name": "安在 Anzer",
+      "domain": "anzerclub.com",
+      "url": "https://www.anzerclub.com",
+      "role": "analysis",
+      "focus": "国内安全人物与产业访谈",
+      "caveat": "厂商生态背景用途；技术主张和匿名故事不作攻击证据。",
+      "language": "zh",
+      "source_family": "anzer",
+      "tier": "background",
+      "rating": {
+        "authority": 3,
+        "originality": 3,
+        "transparency": 2,
+        "access": 1,
+        "quality": 48,
+        "radar_fit": 1
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "nsfocus-nti",
+      "name": "绿盟威胁情报中心（NTI）",
+      "domain": "nti.nsfocus.com",
+      "url": "https://nti.nsfocus.com",
+      "role": "threat-intelligence",
+      "focus": "绿盟IOC与威胁情报",
+      "caveat": "URL仅属绿盟，不含深信服、安恒；本次动态页面无可读正文。",
+      "language": "zh",
+      "source_family": "nsfocus-nti",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 3,
+        "quality": 83,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "limited"
+      },
+      "default_query": "(\"人工智能\" OR \"大模型\" OR \"智能体\" OR \"提示注入\" OR \"MCP\" OR \"AI安全\")"
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv — cs.CR（密码学与安全）",
+      "domain": "arxiv.org",
+      "url": "https://arxiv.org/list/cs.CR/recent",
+      "role": "academic",
+      "focus": "AI安全预印本与方法研究",
+      "caveat": "预印本未必通过同行评审；看版本、代码、实验条件，避免只读摘要。",
+      "language": "en",
+      "source_family": "arxiv",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 5,
+        "transparency": 3,
+        "access": 5,
+        "quality": 78,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "ieeesp",
+      "name": "IEEE S&P（Oakland）",
+      "domain": "ieee-security.org",
+      "url": "https://www.ieee-security.org",
+      "role": "academic",
+      "focus": "系统与AI安全论文",
+      "caveat": "主页是TCSP，按目标年份进入S&P论文；接收身份不等于复现完成。",
+      "language": "en",
+      "source_family": "ieeesp",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "usenix",
+      "name": "USENIX Security",
+      "domain": "usenix.org",
+      "url": "https://www.usenix.org/conferences",
+      "role": "academic",
+      "focus": "Security开放论文与演讲",
+      "caveat": "conferences包含多个会议，收窄到Security具体论文与年份。",
+      "language": "en",
+      "source_family": "usenix",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "acmccs",
+      "name": "ACM CCS",
+      "domain": "sigsac.org",
+      "url": "https://www.sigsac.org",
+      "role": "academic",
+      "focus": "CCS系统、网络与AI研究",
+      "caveat": "SIGSAC主页不是CCS论文集；核对正式论文和预印本版本。",
+      "language": "en",
+      "source_family": "acmccs",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "ndss",
+      "name": "NDSS",
+      "domain": "ndss-symposium.org",
+      "url": "https://www.ndss-symposium.org",
+      "role": "academic",
+      "focus": "网络、系统与AI安全论文",
+      "caveat": "按年份及具体论文定位；不要把未来会议预告当新研究发现。",
+      "language": "en",
+      "source_family": "ndss",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "satml",
+      "name": "IEEE SaTML",
+      "domain": "satml.org",
+      "url": "https://satml.org",
+      "role": "academic",
+      "focus": "安全与可信机器学习论文",
+      "caveat": "当前主页指向2027；研究回目标年份，AI Safety论文按网络安全相关性筛选。",
+      "language": "en",
+      "source_family": "satml",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "blackhat",
+      "name": "Black Hat USA",
+      "domain": "blackhat.com",
+      "url": "https://blackhat.com/",
+      "role": "research",
+      "focus": "工业攻防白皮书与演示",
+      "caveat": "演讲摘要不足以验证技术；商业演示不等于同行评审。",
+      "language": "en",
+      "source_family": "blackhat",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "defcon",
+      "name": "DEF CON",
+      "domain": "defcon.org",
+      "url": "https://defcon.org",
+      "role": "community",
+      "focus": "AI攻防演讲与红队材料",
+      "caveat": "会场、Village和作者报告区分；本次入口受限。",
+      "language": "en",
+      "source_family": "defcon",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 1,
+        "quality": 71,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      }
+    },
+    {
+      "id": "aisec",
+      "name": "ACM AISec Workshop",
+      "domain": "aisec.cc",
+      "url": "https://aisec.cc",
+      "role": "academic",
+      "focus": "AI与安全专题Workshop论文",
+      "caveat": "Workshop与CCS主会分别标识；2026会期在核验日之后，不假定论文已公开。",
+      "language": "en",
+      "source_family": "aisec",
+      "tier": "topic",
+      "rating": {
+        "authority": 5,
+        "originality": 5,
+        "transparency": 5,
+        "access": 5,
+        "quality": 100,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "rsa",
+      "name": "RSA Conference",
+      "domain": "rsaconference.com",
+      "url": "https://www.rsaconference.com",
+      "role": "industry",
+      "focus": "产品方向与买家需求",
+      "caveat": "展商与趋势演讲不当作漏洞或产品性能验证。",
+      "language": "en",
+      "source_family": "rsa",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 3,
+        "access": 5,
+        "quality": 71,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "scholar",
+      "name": "Semantic Scholar",
+      "domain": "semanticscholar.org",
+      "url": "https://www.semanticscholar.org",
+      "role": "directory",
+      "focus": "论文作者、引用与检索",
+      "caveat": "附件仅链接Semantic Scholar；检索工具不负责担保论文结论，Google Scholar需另选入口。",
+      "language": "en",
+      "source_family": "scholar",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 2,
+        "transparency": 2,
+        "access": 1,
+        "quality": 47,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      }
+    },
+    {
+      "id": "risky",
+      "name": "Risky Business",
+      "domain": "risky.biz",
+      "url": "https://risky.biz",
+      "role": "analysis",
+      "focus": "安全新闻去噪与评论",
+      "caveat": "新闻播客、观点及赞助节目分开，引用事件追原始发布。",
+      "language": "en",
+      "source_family": "risky",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "tldrsec",
+      "name": "tl;dr sec",
+      "domain": "tldrsec.com",
+      "url": "https://tldrsec.com",
+      "role": "analysis",
+      "focus": "研究、工具和论文周报发现",
+      "caveat": "链接合集是二级发现层；同一原文多处收录仍算一份证据。",
+      "language": "en",
+      "source_family": "tldrsec",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 77,
+        "radar_fit": 4
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "importai",
+      "name": "Import AI",
+      "domain": "importai.substack.com",
+      "url": "https://importai.substack.com",
+      "role": "analysis",
+      "focus": "能力、研究与政策周报",
+      "caveat": "作者实验室利益关系明确；AI总览覆盖不等于网络安全新闻覆盖。",
+      "language": "en",
+      "source_family": "importai",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 3,
+        "quality": 71,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "limited"
+      }
+    },
+    {
+      "id": "sans",
+      "name": "SANS NewsBites",
+      "domain": "sans.org",
+      "url": "https://www.sans.org/newsletters",
+      "role": "analysis",
+      "focus": "NewsBites摘要与专家评论",
+      "caveat": "SANS为培训研究机构，不能赋予半官方监管地位；摘要和专家建议分开。",
+      "language": "en",
+      "source_family": "sans",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "cyberwire",
+      "name": "The CyberWire",
+      "domain": "thecyberwire.com",
+      "url": "https://thecyberwire.com",
+      "role": "news",
+      "focus": "日报与播客事件线索",
+      "caveat": "不同节目和赞助栏目分开；新闻聚合不能替代事故原文。",
+      "language": "en",
+      "source_family": "cyberwire",
+      "tier": "topic",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 77,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects",
+      "domain": "interconnects.ai",
+      "url": "https://www.interconnects.ai",
+      "role": "analysis",
+      "focus": "RL、开放模型与Agent技术背景",
+      "caveat": "偏模型技术，仅在评测或企业AI控制相关时调用。",
+      "language": "en",
+      "source_family": "interconnects",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 77,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "normaltech",
+      "name": "AI as Normal Technology（原 AI Snake Oil）",
+      "domain": "normaltech.ai",
+      "url": "https://www.normaltech.ai/",
+      "role": "analysis",
+      "focus": "能力评测与AI宣传审视",
+      "caveat": "旧AI Snake Oil域名跳转AI as Normal Technology；循证评论不是攻防原始实验。",
+      "language": "en",
+      "source_family": "normaltech",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 3,
+        "quality": 77,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "limited"
+      }
+    },
+    {
+      "id": "cloudnewsletter",
+      "name": "Cloud Security Newsletter",
+      "domain": "cloudsecuritynewsletter.com",
+      "url": "https://www.cloudsecuritynewsletter.com",
+      "role": "analysis",
+      "focus": "云AI新闻与专家解读",
+      "caveat": "综述和采访分别处理；高危、0day或RCE表述追原报告。",
+      "language": "en",
+      "source_family": "cloudnewsletter",
+      "tier": "topic",
+      "rating": {
+        "authority": 3,
+        "originality": 3,
+        "transparency": 4,
+        "access": 5,
+        "quality": 72,
+        "radar_fit": 3
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "darknetdiaries",
+      "name": "Darknet Diaries",
+      "domain": "darknetdiaries.com",
+      "url": "https://darknetdiaries.com",
+      "role": "analysis",
+      "focus": "安全故事与客户案例素材",
+      "caveat": "故事整理和回顾通常不及时；历史叙事不进入窗口内新闻。",
+      "language": "en",
+      "source_family": "darknetdiaries",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 1,
+        "quality": 71,
+        "radar_fit": 1
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      }
+    },
+    {
+      "id": "gartner",
+      "name": "Gartner（Security & Risk / AI TRiSM）",
+      "domain": "gartner.com",
+      "url": "https://www.gartner.com",
+      "role": "industry",
+      "focus": "AI TRiSM与产品分类",
+      "caveat": "付费研究未读不填结论；市场定位、营销象限和性能实测分开。",
+      "language": "en",
+      "source_family": "gartner",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 3,
+        "access": 1,
+        "quality": 65,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      }
+    },
+    {
+      "id": "forrester",
+      "name": "Forrester Wave",
+      "domain": "forrester.com",
+      "url": "https://www.forrester.com/bold/",
+      "role": "industry",
+      "focus": "产品评价方法与市场对比",
+      "caveat": "厂商Wave位置不等于指定场景效果；公开摘要不能代替报告全文。",
+      "language": "en",
+      "source_family": "forrester",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "idc",
+      "name": "IDC（中国安全市场跟踪）",
+      "domain": "idc.com",
+      "url": "https://www.idc.com",
+      "role": "industry",
+      "focus": "市场份额与中国产业数据",
+      "caveat": "核对地域、年份、样本和市场定义；支出增长不能证明防御有效。",
+      "language": "en",
+      "source_family": "idc",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 2
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "cbinsights",
+      "name": "CB Insights",
+      "domain": "cbinsights.com",
+      "url": "https://www.cbinsights.com",
+      "role": "industry",
+      "focus": "融资与厂商发现",
+      "caveat": "融资、估值及图谱用于背景；不能证明技术有效或市场份额。",
+      "language": "en",
+      "source_family": "cbinsights",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 3,
+        "transparency": 3,
+        "access": 1,
+        "quality": 59,
+        "radar_fit": 1
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      }
+    },
+    {
+      "id": "g2",
+      "name": "G2（AI Security 分类）",
+      "domain": "g2.com",
+      "url": "https://www.g2.com/categories/ai-security",
+      "role": "industry",
+      "focus": "用户评价与产品比较线索",
+      "caveat": "附件只链接G2，未提供Capterra；评价存在自选择与激励影响，不当性能验证。",
+      "language": "en",
+      "source_family": "g2",
+      "tier": "background",
+      "rating": {
+        "authority": 3,
+        "originality": 2,
+        "transparency": 2,
+        "access": 1,
+        "quality": 42,
+        "radar_fit": 1
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "unavailable"
+      }
+    },
+    {
+      "id": "embrace",
+      "name": "Embrace The Red / Johann Rehberger",
+      "domain": "embracethered.com",
+      "url": "https://embracethered.com/blog/",
+      "role": "research",
+      "focus": "提示注入、记忆污染、Agent 权限、Skills 与漏洞披露",
+      "caveat": "核对复现条件、样本量、厂商回复与披露后变化。",
+      "language": "en",
+      "source_family": "embrace",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "simon",
+      "name": "Simon Willison",
+      "domain": "simonwillison.net",
+      "url": "https://simonwillison.net/tags/prompt-injection/",
+      "role": "analysis",
+      "focus": "提示注入、AI 应用安全、沙箱与研究解读",
+      "caveat": "追到所链接的研究原文，检查文章补充和更正。",
+      "language": "en",
+      "source_family": "simon",
+      "tier": "core",
+      "rating": {
+        "authority": 4,
+        "originality": 4,
+        "transparency": 4,
+        "access": 5,
+        "quality": 83,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    },
+    {
+      "id": "invariant",
+      "name": "Invariant Labs",
+      "domain": "invariantlabs.ai",
+      "url": "https://invariantlabs.ai/blog",
+      "role": "archive",
+      "focus": "MCP 工具投毒、跨工具攻击、Agent 数据外泄",
+      "caveat": "2026-10-09 所见索引主要为历史文章；专题追溯使用，先核查更新状态。",
+      "language": "en",
+      "source_family": "invariant",
+      "tier": "background",
+      "rating": {
+        "authority": 4,
+        "originality": 5,
+        "transparency": 4,
+        "access": 5,
+        "quality": 89,
+        "radar_fit": 5
+      },
+      "verification": {
+        "checked_at": "2026-10-09",
+        "scope": "entry-and-selected-claims",
+        "status": "entry-read"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 安全雷达"
+  short_description: "追踪 AI 安全事件与实质更新，核验原文和社区线索，提炼企业影响与选题"
+  default_prompt: "用 $ai-security-radar 查最近 30 天 AI 安全事件，优先 Agent、MCP 和提示注入，核对攻击条件与修复，给我企业影响、选题及实际覆盖缺口。"
